@@ -1,0 +1,27 @@
+TASK 6: OPTIMAL LOCATION PLANNING FOR NEW STATIONS
+
+Objective:
+Analyze charging demand and existing station supply to identify
+regions and locations that may be priorities for expansion.
+
+Top 3 regions:
+- North West: regional score 100.00
+- Midlands: regional score 82.09
+- London: regional score 64.06
+
+Top 5 expansion priorities:
+- North West: final location score 85.00
+- Midlands: final location score 74.76
+- London: final location score 59.47
+- South West: final location score 52.48
+- North East: final location score 50.49
+
+Method:
+Regional score = 70% demand score + 30% energy score.
+Location score = 60% demand + 25% energy + 15% supply gap.
+
+Important:
+Verify detected columns and scoring weights against the Excel workbook.
+These rankings are analytical recommendations, not proof of actual
+site suitability. Land cost, grid capacity, traffic, and permitting
+should also be considered before choosing a real station site.
