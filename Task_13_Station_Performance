@@ -1,0 +1,41 @@
+Task 13: Station Performance Ranking System
+
+Project Overview
+
+This project analyses electric vehicle charging station performance using Excel and Python.
+
+Objectives
+
+- Analyse station performance KPIs.
+- Rank charging stations by performance score.
+- Compare total sessions, energy delivered, and revenue.
+- Identify underperforming stations.
+- Recommend actions to improve station performance.
+
+Tools Used
+
+- Microsoft Excel
+- Python
+- Pandas
+- OpenPyXL
+- GitHub
+
+Project Files
+
+- "task 13.xlsx" — Excel analysis, charts, ranking, and improvement plan.
+- "task13_analysis.py" — Python analysis code.
+- "Task_13_Python_Results.xlsx" — Python-generated analysis results.
+
+How to Run
+
+Install dependencies:
+
+"python -m pip install pandas openpyxl"
+
+Run the script:
+
+"python task13_analysis.py"
+
+Expected Output
+
+The script generates a workbook containing station rankings, KPI comparisons, underperforming stations, summary statistics, and ranking validation.
