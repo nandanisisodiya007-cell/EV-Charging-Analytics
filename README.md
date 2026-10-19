@@ -1,22 +1,41 @@
-# EV Charging Analytics
+Task 13: Station Performance Ranking System
 
-## Project Overview
-This project focuses on EV charging demand analysis and forecasting.
+Project Overview
 
-## Files Included
-- `EV_Charging_demand_Forecast...` – EV charging demand data
-- `forecasting.py` – Python forecasting and analysis
-- `monthly_EV_charging_demand...` – Monthly charging demand data
-- `weekly_EV_charging_demand.csv` – Weekly charging demand data
+This project analyses electric vehicle charging station performance using Excel and Python.
 
-## Work Completed
-- Data cleaning and preparation
-- EV charging demand analysis
-- Time-based aggregation
-- Forecasting analysis using Python
+Objectives
 
-## Tools Used
+- Analyse station performance KPIs.
+- Rank stations by performance score.
+- Compare sessions, energy delivered, and revenue.
+- Identify underperforming stations.
+- Recommend actions for improving station performance.
+
+Tools Used
+
 - Microsoft Excel
 - Python
 - Pandas
-- Data analysis and forecasting techniques
+- OpenPyXL
+- GitHub
+
+Project Files
+
+- "task 13.xlsx" — Excel analysis, KPI charts, station ranking, and improvement plan.
+- "task13_analysis.py" — Python analysis script.
+- "Task_13_Python_Results.xlsx" — Python-generated station rankings, KPI comparison, summary, and validation results.
+
+How to Run
+
+Install dependencies:
+
+"python -m pip install pandas openpyxl"
+
+Run the analysis:
+
+"python task13_analysis.py"
+
+Expected Output
+
+The script generates "Task_13_Python_Results.xlsx" with summary statistics, station rankings, top five stations, underperforming stations, KPI comparisons, and ranking validation.
