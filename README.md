@@ -1,76 +1,50 @@
-Task 16: Energy Consumption & Grid Load Analysis
+# Task 15: Customer Lifetime Value (CLV) Estimation
 
-Project Overview
+## Project Overview
+This project analyzes electric vehicle charging-session data to estimate customer value and identify high-value customer segments.
 
-This project analyzes electric vehicle (EV) charging session data to understand energy consumption across stations, regions, and hours of the day. It supports energy planning, demand monitoring, and sustainability analysis.
+## Objectives
+- Calculate total sessions and spending for each customer.
+- Analyze customer energy consumption.
+- Estimate annualized customer spending.
+- Segment customers into Low, Medium, and High Value groups.
+- Identify high-value customers for retention strategies.
 
-Objectives
-
-- Calculate total energy delivered per station and region.
-- Analyze energy consumption by hour of the day.
-- Summarize daily energy consumption.
-- Produce a simple rolling-average reference for daily energy.
-- Identify high-energy stations and peak energy-consumption hours.
-
-Tools Used
-
+## Tools Used
 - Python
 - Pandas
 - Matplotlib
-- Excel dataset
+- Excel
+- VS Code
+- GitHub
 
-Dataset
+## Methodology
+1. Load charging-session records from the Sessions sheet.
+2. Clean customer IDs, costs, energy values, and timestamps.
+3. Aggregate session activity and spending by customer.
+4. Calculate average spending per session and an annualized spending estimate.
+5. Divide customers into three segments based on total spending.
+6. Export customer results and a segment chart.
 
-The analysis uses the "Sessions" worksheet from "ev_charging_dataset.xlsx".
+## Outputs
+- results/customer_clv_results.csv
+- results/customer_clv_results.xlsx
+- results/clv_segment_chart.png
 
-The source dataset is not included in this repository. Place the dataset in the project folder before running the script.
+## Interpretation
+Customers with higher total spending are classified as high-value customers. These segments can help prioritize customer engagement and retention efforts.
 
-Methodology
+The annualized spending measure is an estimate based on observed activity, not a validated prediction of future lifetime value.
 
-1. Load charging session data.
-2. Convert timestamps and energy values into appropriate formats.
-3. Remove rows missing essential analysis fields and exclude negative energy values.
-4. Aggregate energy and session counts by station, region, hour, and day.
-5. Calculate a seven-day rolling-average reference for daily energy.
-6. Export summary CSV files and visualizations into the "results" folder.
+## How to Run
+Install dependencies:
 
-Key Findings
-
-- Total charging sessions analyzed: 294,024.
-- Total energy delivered: 13,808,745.8 kWh.
-- Stations analyzed: 33.
-- Regions analyzed: 9.
-- The highest aggregated hourly energy was observed at hour 10 (10:00–10:59).
-- Station "STN_002" recorded the highest total energy among the stations analyzed.
-
-Output Files
-
-The "results" folder contains:
-
-- "overall_energy_summary.csv"
-- "station_energy_summary.csv"
-- "regional_energy_summary.csv"
-- "hourly_load_summary.csv"
-- "daily_energy_summary.csv"
-- "daily_energy_forecast.csv"
-- "regional_energy_chart.png"
-- "hourly_load_chart.png"
-- "daily_energy_forecast_chart.png"
-
-How to Run
-
-Install the required libraries:
-
-pip install -r requirements.txt
+pip install pandas matplotlib openpyxl
 
 Run the analysis:
 
-python energy_analysis.py
+python clv_analysis.py
 
-Limitations
+## Limitations
+The analysis uses historical charging activity and spending. It does not directly model future retention, profit margins, or customer churn.
 
-The hourly analysis aggregates energy by session start hour. It does not calculate simultaneous grid power demand or actual grid stress. The seven-day rolling average is a simple reference, not a validated forecasting model.
-
-Conclusion
-
-This project provides an overview of EV charging energy patterns and regional differences. The findings can help guide further investigation into station capacity, charging schedules, and energy infrastructure planning.
