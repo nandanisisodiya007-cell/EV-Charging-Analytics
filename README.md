@@ -1,60 +1,76 @@
-Task 11: EV Charging Anomaly Detection (Fraud / Misuse)
+Task 16: Energy Consumption & Grid Load Analysis
 
 Project Overview
 
-This project uses machine learning to identify unusual patterns in electric vehicle (EV) charging sessions. It uses the Isolation Forest algorithm to flag potentially anomalous sessions for further investigation.
+This project analyzes electric vehicle (EV) charging session data to understand energy consumption across stations, regions, and hours of the day. It supports energy planning, demand monitoring, and sustainability analysis.
 
 Objectives
 
-- Analyze EV charging session data.
-- Identify unusual charging patterns.
-- Flag potential anomalies for review.
-- Export results to Excel and create a summary chart.
+- Calculate total energy delivered per station and region.
+- Analyze energy consumption by hour of the day.
+- Summarize daily energy consumption.
+- Produce a simple rolling-average reference for daily energy.
+- Identify high-energy stations and peak energy-consumption hours.
 
-Tools and Technologies
+Tools Used
 
 - Python
 - Pandas
-- Scikit-learn
 - Matplotlib
-- Excel
-- Git and GitHub
+- Excel dataset
+
+Dataset
+
+The analysis uses the "Sessions" worksheet from "ev_charging_dataset.xlsx".
+
+The source dataset is not included in this repository. Place the dataset in the project folder before running the script.
 
 Methodology
 
-1. Load the EV charging dataset from Excel.
-2. Clean the column names and prepare the data.
-3. Filter out records with missing or invalid values in the selected features.
-4. Apply the Isolation Forest anomaly detection algorithm.
-5. Label sessions as "Normal" or "Potential Anomaly".
-6. Export the results and create a chart summarizing the findings.
+1. Load charging session data.
+2. Convert timestamps and energy values into appropriate formats.
+3. Remove rows missing essential analysis fields and exclude negative energy values.
+4. Aggregate energy and session counts by station, region, hour, and day.
+5. Calculate a seven-day rolling-average reference for daily energy.
+6. Export summary CSV files and visualizations into the "results" folder.
 
-Features Used
+Key Findings
 
-- Session duration
-- Energy consumed (kWh)
-- Price per kWh
-- Total cost
+- Total charging sessions analyzed: 294,024.
+- Total energy delivered: 13,808,745.8 kWh.
+- Stations analyzed: 33.
+- Regions analyzed: 9.
+- The highest aggregated hourly energy was observed at hour 10 (10:00–10:59).
+- Station "STN_002" recorded the highest total energy among the stations analyzed.
 
-Outputs
+Output Files
 
-- "anomaly_results.xlsx" — session-level analysis and anomaly labels.
-- "anomaly_summary.png" — chart summarizing normal and potentially anomalous sessions.
+The "results" folder contains:
 
-Important Note
-
-Potential anomalies are not confirmed cases of fraud or misuse. They require further investigation. The model's contamination parameter is set to 0.02 (2%), which influences the expected proportion of flagged records.
+- "overall_energy_summary.csv"
+- "station_energy_summary.csv"
+- "regional_energy_summary.csv"
+- "hourly_load_summary.csv"
+- "daily_energy_summary.csv"
+- "daily_energy_forecast.csv"
+- "regional_energy_chart.png"
+- "hourly_load_chart.png"
+- "daily_energy_forecast_chart.png"
 
 How to Run
 
-1. Install the required libraries:
-   
-   python -m pip install pandas scikit-learn matplotlib openpyxl
+Install the required libraries:
 
-2. Run the Python script:
-   
-   python anomaly_detection.py
+pip install -r requirements.txt
+
+Run the analysis:
+
+python energy_analysis.py
+
+Limitations
+
+The hourly analysis aggregates energy by session start hour. It does not calculate simultaneous grid power demand or actual grid stress. The seven-day rolling average is a simple reference, not a validated forecasting model.
 
 Conclusion
 
-This project demonstrates how machine learning can help identify unusual EV charging sessions and support further investigation into possible misuse or irregular activity.
+This project provides an overview of EV charging energy patterns and regional differences. The findings can help guide further investigation into station capacity, charging schedules, and energy infrastructure planning.
